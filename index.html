@@ -70,10 +70,11 @@
       display:block;
       object-fit:cover;
 
-      /* "Edição" simples e eficiente (sem precisar mexer no arquivo) */
       filter: contrast(1.06) brightness(1.04) saturate(1.03);
-      object-position: 42% 32%; /* foco no rosto (ajuste fino se quiser) */
-      transform: scale(1.0);   /* dá uma “aproximada” leve */
+
+      /* Mobile ficou ótimo: mantém o enquadramento atual */
+      object-position: 42% 32%;
+      transform: scale(1.0);
     }
     .hero::after{
       content:"";
@@ -104,7 +105,10 @@
       padding:22px 22px 18px;
       display:flex;
       flex-direction:column;
+
+      /* No mobile ok; no desktop vamos sobrescrever pra "top" */
       justify-content:center;
+
       gap:14px;
     }
     h1{
@@ -265,6 +269,21 @@
       .content{ padding:18px; }
       .hero-badge{ font-size:13px; }
     }
+
+    /* Ajustes específicos para DESKTOP (onde estava “estranho”) */
+    @media (min-width: 861px){
+      /* Deixa o texto começar no topo (mais natural com vídeo) */
+      .content{ justify-content:flex-start; }
+
+      /* Deixa a imagem acompanhar a altura real da coluna da direita */
+      .hero{ min-height: unset; }
+
+      /* Enquadramento levemente mais “aberto” no desktop */
+      .hero img{
+        object-position: 46% 28%;
+        transform: scale(0.98);
+      }
+    }
   </style>
 </head>
 
@@ -272,7 +291,6 @@
   <main class="wrap">
     <!-- Imagem -->
     <section class="card hero" aria-label="Apresentação">
-      <!-- Coloque sua foto aqui: /assets/hero.jpg -->
       <img src="assets/hero.jpg" alt="Vinicius, Descomplicando Tecnologia" />
       <div class="hero-badge">
         🔒 <span>Conteúdo educativo • sem venda • sem pegadinha</span>
@@ -298,7 +316,6 @@
       </ul>
 
       <div class="cta">
-        <!-- WhatsApp: recomendo wa.me (mais limpo) -->
         <a class="btn"
            href="https://wa.me/556293813721?text=Ol%C3%A1%2C%20quero%20receber%20o%20e-book%20de%20compras%20seguras%20com%20os%207%20passos."
            target="_blank" rel="noopener">
@@ -319,7 +336,6 @@
           </p>
 
           <div class="video">
-            <!-- Embed limpo (sem começar no meio) -->
             <iframe
               src="https://www.youtube.com/embed/fBHDoK68dqw"
               title="Descomplicando Tecnologia - Compras Seguras"
@@ -334,7 +350,7 @@
           <div class="trustline">
             <span class="pill">✅ Linguagem simples</span>
             <span class="pill">✅ Gratuito</span>
-            <span class="pill">✅ Foco em pessoas que não nasceram na era digital</span>
+            <span class="pill">✅ Foco em 50+</span>
           </div>
           <div>© <b>Descomplicando Tecnologia</b> — conteúdo educativo para o dia a dia.</div>
         </div>
