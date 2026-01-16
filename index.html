@@ -184,6 +184,51 @@
       line-height:1.35;
     }
 
+    /* Bloco do vídeo (abaixo do CTA) */
+    .divider{
+      margin:8px 0 0;
+      border:0;
+      border-top:1px dashed rgba(148,163,184,.55);
+    }
+    .video-block{
+      margin-top:10px;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#ffffff;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .video-title{
+      margin:0;
+      font-size:14px;
+      color:#0f172a;
+      font-weight:800;
+    }
+    .video-sub{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+    .video{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(226,232,240,.9);
+      background:#0b1220;
+    }
+    .video iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
     .footer{
       margin-top:8px;
       padding-top:12px;
@@ -264,11 +309,32 @@
           Se preferir, pode só dizer: <strong>“Quero o e-book”</strong>.
         </div>
 
+        <!-- Vídeo (abaixo do CTA, como reforço de confiança) -->
+        <hr class="divider" />
+        <div class="video-block" aria-label="Vídeo explicativo">
+          <p class="video-title">Prefere entender melhor antes?</p>
+          <p class="video-sub">
+            Assista a este vídeo curto (3 minutos), onde eu explico com calma como funciona esse material.
+            <br/>Não precisa assistir para receber — o botão do WhatsApp acima já funciona.
+          </p>
+
+          <div class="video">
+            <!-- Embed limpo (sem começar no meio) -->
+            <iframe
+              src="https://www.youtube.com/embed/fBHDoK68dqw"
+              title="Descomplicando Tecnologia - Compras Seguras"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
         <div class="footer">
           <div class="trustline">
             <span class="pill">✅ Linguagem simples</span>
             <span class="pill">✅ Gratuito</span>
-            <span class="pill">✅ Foco em 50+</span>
+            <span class="pill">✅ Foco em pessoas que não nasceram na era digital</span>
           </div>
           <div>© <b>Descomplicando Tecnologia</b> — conteúdo educativo para o dia a dia.</div>
         </div>
