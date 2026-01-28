@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Descomplicando Tecnologia | Compras Seguras</title>
-  <meta name="description" content="Receba grátis os 7 passos práticos para comprar com mais segurança e evitar golpes na internet." />
-  <meta name="theme-color" content="#0b1220" />
 
-  <!-- Open Graph (melhora preview em WhatsApp/Redes) -->
+  <title>Receba os 7 passos para comprar com segurança</title>
+  <meta name="description" content="Checklist simples e gratuito para evitar golpes em compras na internet. Receba agora no WhatsApp." />
+  <meta name="theme-color" content="#16a34a" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Evite golpes em compras na internet" />
-  <meta property="og:description" content="Receba grátis os 7 passos práticos para comprar com mais segurança." />
+  <meta property="og:description" content="Receba grátis os 7 passos práticos para comprar com segurança." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://descomplicandotecnologia.com.br/assets/hero.jpg" />
+
 
   <style>
     :root{
@@ -20,21 +21,18 @@
       --text:#0f172a;
       --muted:#475569;
       --line:#e2e8f0;
-      --brand:#16a34a;   /* verde confiança */
+      --brand:#16a34a;
       --brand2:#15803d;
-      --shadow: 0 20px 50px rgba(2,6,23,.25);
-      --radius: 18px;
+      --shadow:0 20px 40px rgba(2,6,23,.25);
+      --radius:18px;
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(34,197,94,.18), transparent 55%),
-        radial-gradient(900px 600px at 100% 0%, rgba(59,130,246,.16), transparent 55%),
-        var(--bg);
       min-height:100vh;
       display:flex;
       align-items:center;
@@ -42,189 +40,120 @@
       padding:20px;
     }
 
-    .wrap{
-      width:min(980px, 100%);
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:18px;
-      align-items:stretch;
-    }
-
     .card{
+      width:min(620px,100%);
       background:var(--card);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      overflow:hidden;
-      border:1px solid rgba(226,232,240,.7);
-    }
-
-    /* Bloco da imagem */
-    .hero{
-      position:relative;
-      min-height:520px;
-      background:#0b1220;
-    }
-    .hero img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-
-      filter: contrast(1.06) brightness(1.04) saturate(1.03);
-
-      /* Mobile ficou ótimo: mantém o enquadramento atual */
-      object-position: 42% 32%;
-      transform: scale(1.0);
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(2,6,23,.00) 35%, rgba(2,6,23,.50) 100%);
-      pointer-events:none;
-    }
-    .hero-badge{
-      position:absolute;
-      left:14px;
-      top:14px;
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(226,232,240,.9);
-      border-radius:999px;
-      padding:10px 12px;
-      font-size:14px;
-      color:#0f172a;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      backdrop-filter: blur(6px);
-    }
-    .hero-badge span{opacity:.85}
-
-    /* Conteúdo */
-    .content{
-      padding:22px 22px 18px;
+      padding:26px;
       display:flex;
       flex-direction:column;
-
-      /* No mobile ok; no desktop vamos sobrescrever pra "top" */
-      justify-content:center;
-
-      gap:14px;
+      gap:16px;
     }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#f0fdf4;
+      border:1px solid #bbf7d0;
+      color:#166534;
+      font-weight:600;
+      width:fit-content;
+    }
+
     h1{
       margin:0;
-      font-size: clamp(26px, 3.1vw, 36px);
-      line-height:1.08;
-      letter-spacing:-.02em;
+      font-size:clamp(26px,4vw,34px);
+      line-height:1.1;
     }
+
     .lead{
       margin:0;
       font-size:18px;
       line-height:1.45;
       color:var(--muted);
     }
+
     .who{
-      margin:0;
-      padding:14px 14px;
+      background:#f8fafc;
       border:1px solid var(--line);
       border-radius:14px;
-      background:#f8fafc;
-      color:#0f172a;
-      line-height:1.4;
+      padding:14px;
+      font-size:15px;
     }
-    .who strong{font-weight:800}
 
     .bullets{
-      margin:0;
-      padding:0;
       list-style:none;
+      padding:0;
+      margin:0;
       display:grid;
       gap:10px;
     }
+
     .bullets li{
       display:flex;
       gap:10px;
-      align-items:flex-start;
-      padding:12px 12px;
+      padding:12px;
       border:1px solid var(--line);
       border-radius:14px;
       background:#ffffff;
+      font-size:15px;
     }
+
     .dot{
-      width:10px;height:10px;border-radius:999px;
+      width:10px;
+      height:10px;
       background:var(--brand);
+      border-radius:999px;
       margin-top:6px;
       flex:0 0 10px;
     }
 
-    .cta{
-      margin-top:6px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
     .btn{
-      display:inline-flex;
+      display:flex;
       align-items:center;
       justify-content:center;
       gap:10px;
       width:100%;
-      padding:14px 16px;
+      padding:16px;
       border-radius:14px;
-      border:1px solid rgba(21,128,61,.35);
-      background: linear-gradient(180deg, var(--brand), var(--brand2));
+      background:linear-gradient(180deg,var(--brand),var(--brand2));
       color:#fff;
-      font-weight:800;
       font-size:18px;
+      font-weight:800;
       text-decoration:none;
-      box-shadow: 0 12px 24px rgba(22,163,74,.25);
-      transition: transform .08s ease, filter .08s ease;
-    }
-    .btn:active{ transform: translateY(1px); filter: brightness(.98); }
-    .mini{
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-      line-height:1.35;
+      box-shadow:0 10px 22px rgba(22,163,74,.3);
     }
 
-    /* Bloco do vídeo (abaixo do CTA) */
-    .divider{
-      margin:8px 0 0;
-      border:0;
-      border-top:1px dashed rgba(148,163,184,.55);
+    .mini{
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.4;
     }
+
     .video-block{
       margin-top:10px;
-      padding:12px 12px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#ffffff;
+      padding-top:12px;
+      border-top:1px dashed var(--line);
       display:flex;
       flex-direction:column;
       gap:10px;
     }
-    .video-title{
-      margin:0;
-      font-size:14px;
-      color:#0f172a;
-      font-weight:800;
-    }
-    .video-sub{
-      margin:0;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.35;
-    }
+
     .video{
       position:relative;
       width:100%;
       aspect-ratio:16/9;
       border-radius:12px;
       overflow:hidden;
-      border:1px solid rgba(226,232,240,.9);
-      background:#0b1220;
+      border:1px solid var(--line);
     }
+
     .video iframe{
       position:absolute;
       inset:0;
@@ -234,128 +163,93 @@
     }
 
     .footer{
-      margin-top:8px;
-      padding-top:12px;
-      border-top:1px dashed rgba(148,163,184,.55);
+      margin-top:6px;
       font-size:12.5px;
-      color:rgba(71,85,105,.95);
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-    .footer b{color:#0f172a}
-    .trustline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      border:1px solid var(--line);
-      padding:8px 10px;
-      border-radius:999px;
-      background:#ffffff;
-      color:#0f172a;
-      font-size:13px;
-      white-space:nowrap;
-    }
-
-    @media (max-width: 860px){
-      .wrap{ grid-template-columns: 1fr; }
-      .hero{ min-height:280px; }
-      .content{ padding:18px; }
-      .hero-badge{ font-size:13px; }
-    }
-
-    /* Ajustes específicos para DESKTOP (onde estava “estranho”) */
-    @media (min-width: 861px){
-      /* Deixa o texto começar no topo (mais natural com vídeo) */
-      .content{ justify-content:flex-start; }
-
-      /* Deixa a imagem acompanhar a altura real da coluna da direita */
-      .hero{ min-height: unset; }
-
-      /* Enquadramento levemente mais “aberto” no desktop */
-      .hero img{
-        object-position: 46% 28%;
-        transform: scale(0.98);
-      }
+      color:#475569;
+      text-align:center;
+      line-height:1.5;
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <!-- Imagem -->
-    <section class="card hero" aria-label="Apresentação">
-      <img src="assets/hero.jpg" alt="Vinicius, Descomplicando Tecnologia" />
-      <div class="hero-badge">
-        🔒 <span>Conteúdo educativo • sem venda • sem pegadinha</span>
+  <main class="card">
+    <span class="badge">🔒 Conteúdo educativo • gratuito • sem pegadinha</span>
+
+    <h1>Evite golpes em compras na internet</h1>
+
+    <p class="lead">
+      Receba agora um checklist simples com <strong>7 passos práticos</strong>
+      para identificar sites confiáveis e comprar com mais tranquilidade.
+    </p>
+
+    <p class="who">
+      Eu sou <strong>Vinicius</strong>, do <strong>Descomplicando Tecnologia</strong>.
+      Ajudo pessoas que <strong>não nasceram na era digital</strong> a usar a internet com mais segurança.
+    </p>
+
+    <ul class="bullets">
+      <li><span class="dot"></span><span>Linguagem simples, sem termos técnicos.</span></li>
+      <li><span class="dot"></span><span>Material rápido, direto e fácil de aplicar.</span></li>
+    </ul>
+
+    <a class="btn"
+       href="https://wa.me/556293813721?text=Olá,%20quero%20receber%20o%20e-book%20de%20compras%20seguras%20com%20os%207%20passos."
+       target="_blank" rel="noopener">
+      👉 Receber os 7 passos no WhatsApp
+    </a>
+
+    <div class="mini">
+      Se o WhatsApp não abrir automaticamente, <br/>
+      toque no botão acima.
+    </div>
+
+    <!-- Vídeo como reforço de confiança -->
+    <div class="video-block">
+      <strong>Prefere entender melhor antes?</strong>
+      <span class="mini">
+        Assista ao vídeo curto abaixo (3 minutos).
+        Não é obrigatório para receber o material.
+      </span>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/fBHDoK68dqw"
+          title="Descomplicando Tecnologia - Compras Seguras"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
-    </section>
+    </div>
+	
+	<div class="video-block">
+	  <strong>Quer ir além? (opcional)</strong>
+	  <span class="mini">
+		Também mantenho um grupo chamado <strong>Clube de Promo – Descomplicando Tecnologia</strong>,
+		onde compartilho promoções que fazem sentido, dicas simples de tecnologia
+		e aviso quando NÃO vale a pena comprar.
+	  </span>
 
-    <!-- Texto + CTA -->
-    <section class="card content" aria-label="Conteúdo e chamada para ação">
-      <h1>Evite golpes em compras na internet</h1>
+	  <a class="btn"
+		 style="background:#334155; box-shadow:none; font-size:16px;"
+		 href="https://chat.whatsapp.com/KuPkC6gxty34VtdXm1ROCM"
+		 target="_blank" rel="noopener">
+		👉 Conhecer o Clube de Promo
+	  </a>
 
-      <p class="lead">
-        Todo dia pessoas bem-intencionadas caem em golpes no WhatsApp e em sites falsos — às vezes por um detalhe simples.
-      </p>
+	  <div class="mini">
+		Grupo tranquilo. Se não fizer sentido, é só sair quando quiser.
+	  </div>
+	</div>
 
-      <p class="who">
-        Eu sou <strong>Vinicius</strong>, do <strong>Descomplicando Tecnologia</strong>.
-        Eu ajudo pessoas que <strong>não nasceram na era digital</strong> a usar a internet com mais segurança.
-      </p>
+	
 
-      <ul class="bullets">
-        <li><span class="dot"></span><span>Checklist simples com <strong>7 passos práticos</strong> para identificar sites confiáveis.</span></li>
-        <li><span class="dot"></span><span>Dicas diretas para comprar com mais tranquilidade — sem linguagem difícil.</span></li>
-      </ul>
-
-      <div class="cta">
-        <a class="btn"
-           href="https://wa.me/556293813721?text=Ol%C3%A1%2C%20quero%20receber%20o%20e-book%20de%20compras%20seguras%20com%20os%207%20passos."
-           target="_blank" rel="noopener">
-          👉 Receber os 7 passos no WhatsApp
-        </a>
-        <div class="mini">
-          Você vai abrir o WhatsApp já com a mensagem pronta. <br/>
-          Se preferir, pode só dizer: <strong>“Quero o e-book”</strong>.
-        </div>
-
-        <!-- Vídeo (abaixo do CTA, como reforço de confiança) -->
-        <hr class="divider" />
-        <div class="video-block" aria-label="Vídeo explicativo">
-          <p class="video-title">Prefere entender melhor antes?</p>
-          <p class="video-sub">
-            Assista a este vídeo curto (3 minutos), onde eu explico com calma como funciona esse material.
-            <br/>Não precisa assistir para receber — o botão do WhatsApp acima já funciona.
-          </p>
-
-          <div class="video">
-            <iframe
-              src="https://www.youtube.com/embed/fBHDoK68dqw"
-              title="Descomplicando Tecnologia - Compras Seguras"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-
-        <div class="footer">
-          <div class="trustline">
-            <span class="pill">✅ Linguagem simples</span>
-            <span class="pill">✅ Gratuito</span>
-            <span class="pill">✅ Foco em 50+</span>
-          </div>
-          <div>© <b>Descomplicando Tecnologia</b> — conteúdo educativo para o dia a dia.</div>
-        </div>
-      </div>
-    </section>
+    <div class="footer">
+      📺 YouTube: Descomplicando Tecnologia <br/>
+      📸 Instagram: @descomplicando.tecnologia <br/><br/>
+      © Descomplicando Tecnologia — conteúdo educativo para o dia a dia
+    </div>
   </main>
 </body>
 </html>
